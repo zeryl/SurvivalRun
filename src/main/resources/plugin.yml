@@ -1,5 +1,5 @@
 name: ${name}
-main: ${groupId}.${artifactId}
+main: com.precipicegames.zeryl.survivalrun.SurvivalRun
 version: ${version}
 commands:
     examplecommand:
