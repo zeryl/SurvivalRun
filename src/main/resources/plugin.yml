@@ -1,0 +1,12 @@
+name: ${name}
+main: ${groupId}.${artifactId}
+version: ${version}
+commands:
+    examplecommand:
+        description: Command Description
+        usage: |
+            /<command> command parms - Command Description
+permissions:
+    example.perm:
+        description: What this perm does
+        default: op
