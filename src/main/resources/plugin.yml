@@ -2,10 +2,10 @@ name: ${name}
 main: com.precipicegames.zeryl.survivalrun.SurvivalRun
 version: ${version}
 commands:
-    examplecommand:
+    toggle:
         description: Command Description
         usage: |
-            /<command> command parms - Command Description
+            /<command> - Toggles switch at announcer booth
 permissions:
     example.perm:
         description: What this perm does
