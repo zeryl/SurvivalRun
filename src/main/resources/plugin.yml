@@ -2,10 +2,14 @@ name: ${name}
 main: com.precipicegames.zeryl.survivalrun.SurvivalRun
 version: ${version}
 commands:
-    toggle:
-        description: Command Description
+    setspawn:
+        description: Sets one of the possible spawn points
         usage: |
-            /<command> - Toggles switch at announcer booth
+            /<command> - Sets one of the possible spawn points
+    sendplayers:
+      description: Sends players to spawn points
+      usage: |
+         /<command> - Sends players to spawn points
 permissions:
     example.perm:
         description: What this perm does

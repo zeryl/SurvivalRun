@@ -45,8 +45,8 @@ public class SurvivalRunPlayerListener implements Listener {
         if(event.getEntity() instanceof Player) {
             Player dead = (Player) event.getEntity();
             
-            event.setDeathMessage(dead.getDisplayName() + " has fallen dead from ");
-            EntityDamageEvent lastDamage = dead.getLastDamageCause();
+            event.setDeathMessage(dead.getDisplayName() + " has fallen dead");
+            /*EntityDamageEvent lastDamage = dead.getLastDamageCause();
 
             DamageCause dc = lastDamage.getCause();
             switch (dc) {
@@ -55,7 +55,7 @@ public class SurvivalRunPlayerListener implements Listener {
                     break;
             }
                     
-            event.setDeathMessage(event.getDeathMessage() + lastDamage.getCause().toString());
+            event.setDeathMessage(event.getDeathMessage() + lastDamage.getCause().toString());*/
             event.setDeathMessage(event.getDeathMessage() + "!  May the Odds be Ever in your Favor");
         }
     }   
