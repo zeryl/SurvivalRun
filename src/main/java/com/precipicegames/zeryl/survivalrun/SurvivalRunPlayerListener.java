@@ -6,8 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 
@@ -45,18 +43,10 @@ public class SurvivalRunPlayerListener implements Listener {
         if(event.getEntity() instanceof Player) {
             Player dead = (Player) event.getEntity();
             
-            event.setDeathMessage(dead.getDisplayName() + " has fallen dead");
-            /*EntityDamageEvent lastDamage = dead.getLastDamageCause();
-
-            DamageCause dc = lastDamage.getCause();
-            switch (dc) {
-                case BLOCK_EXPLOSION:
-                    event.setDeathMessage(event.getDeathMessage() + " an explosion!");
-                    break;
+            if(!plugin.deaths.contains(dead.getName())) {
+                plugin.deaths.add(dead.getName());
+                event.setDeathMessage(dead.getDisplayName() + " has fallen dead! May the Odds be Ever in your Favor");
             }
-                    
-            event.setDeathMessage(event.getDeathMessage() + lastDamage.getCause().toString());*/
-            event.setDeathMessage(event.getDeathMessage() + "!  May the Odds be Ever in your Favor");
         }
     }   
 }

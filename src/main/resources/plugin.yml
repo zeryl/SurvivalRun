@@ -10,6 +10,10 @@ commands:
       description: Sends players to spawn points
       usage: |
          /<command> - Sends players to spawn points
+    deaths:
+      description: Lists who has died
+      usage: |
+        /<command> - Lists out who has died
 permissions:
     example.perm:
         description: What this perm does

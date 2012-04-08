@@ -1,5 +1,6 @@
 package com.precipicegames.zeryl.survivalrun;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.bukkit.Location;
@@ -29,6 +30,8 @@ public class SurvivalRun extends JavaPlugin {
     private FileConfiguration config;
     private boolean sent;
     private int number = 0;
+    public HashSet<String> deaths = new HashSet<String>();
+    private String deathnames = "";
 
     @Override
     public void onEnable() {
@@ -75,8 +78,34 @@ public class SurvivalRun extends JavaPlugin {
                 else {
                     player.sendMessage("Sorry, already sent them, reload or ask Zeryl how to bypass!");
                 }
+                return true;
             }
         }
+        
+        if (cmd.getName().equalsIgnoreCase("deaths")) {
+            if(deaths.isEmpty()) {
+                sender.sendMessage("Noone has died yet.");
+                return true;
+            }
+            Iterator<String> iterator = deaths.iterator();
+            while (iterator.hasNext()) {
+                if(deathnames.length() == 0)
+                    deathnames = iterator.next().toString();
+                else
+                    deathnames = deathnames + ", " + iterator.next().toString();
+            }
+            
+            sender.sendMessage("Deaths: " + deathnames);
+            return true;
+        }
+        
+        /*if (cmd.getName().equalsIgnoreCase("testme")) {
+            if (sender instanceof Player) {
+                ItemStack is = new ItemStack(Material.DIAMOND);
+                is.setAmount(1);
+                dropChest((Player) sender, is);
+            }
+        }*/
         return true;
     }
 
