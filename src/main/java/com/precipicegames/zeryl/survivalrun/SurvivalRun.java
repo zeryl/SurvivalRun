@@ -53,7 +53,7 @@ public class SurvivalRun extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("setspawn") && (sender.getName().equalsIgnoreCase("zeryl"))) {
+        if (cmd.getName().equalsIgnoreCase("settube") && (sender.getName().equalsIgnoreCase("zeryl"))) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 boolean worked = addSpawn(player);
