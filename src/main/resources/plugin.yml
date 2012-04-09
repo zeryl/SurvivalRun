@@ -2,7 +2,7 @@ name: ${name}
 main: com.precipicegames.zeryl.survivalrun.SurvivalRun
 version: ${version}
 commands:
-    setspawn:
+    settube:
         description: Sets one of the possible spawn points
         usage: |
             /<command> - Sets one of the possible spawn points
